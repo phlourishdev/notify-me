@@ -11,10 +11,10 @@ chmod +x ./notify-me.sh
 
 2. Execute it 
 ```bash
-./notify-me.sh $TIME $TIMER_DESC
+./notify-me.sh $TIME $TIMER_DESCRIPTION
 ```
 The format of `$TIME` is HH:MM:SS, so `"1:30:30"`, for 1 hour, 30 minutes and 30 seconds.
-`$TIMER_DESC` can be left empty.
+`$TIMER_DESCRIPTION` can be left empty.
 
 ## Attributions
 
