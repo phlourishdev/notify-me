@@ -2,8 +2,9 @@
 
 {
     # get arguments
-    whole_timer_string=$1 # timer value in HH:MM:SS
-    timer_description=$2 # description for the timer
+    whole_timer_string=$1   # timer value in HH:MM:SS
+    shift                   # move arguments so that e.g. the 2nd arg is at the 1st position
+    timer_description=$*    # description for the timer
 
     # seperate string into three time parts
     IFS=":" read -ra time_parts <<< "$whole_timer_string"
@@ -45,6 +46,9 @@
         echo "Invalid value: Value for hours, minutes and/or seconds is less than 0."
         exit 1
     fi
+
+    # user input is valid, so notify the user of timer starting
+    echo "Set timer for $hours hours, $minutes minutes and $seconds seconds."
 
     # calculate the amount of total seconds
     total_seconds=$(($seconds + 60 * $minutes + 3600 * $hours))
