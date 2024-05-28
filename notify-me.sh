@@ -50,11 +50,11 @@
     # user input is valid, so notify the user of timer starting
     echo "Set timer for $hours hours, $minutes minutes and $seconds seconds."
 
-    # calculate the amount of total seconds
-    total_seconds=$(($seconds + 60 * $minutes + 3600 * $hours))
+    # calculate the total amount of seconds
+    seconds_total=$(($seconds + 60 * $minutes + 3600 * $hours))
 
-    # wait the amount of total seconds
-    for ((i=$total_seconds; i > 0; i--)); do
+    # wait the total amount of seconds
+    for ((i=$seconds_total; i > 0; i--)); do
         sleep 1
     done
 
